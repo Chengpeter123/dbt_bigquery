@@ -1,0 +1,12 @@
+default:
+ target: dev
+ outputs:
+  dev:
+   type: bigquery
+   project: skilful-gantry-404609
+   dataset: Staging
+   threads: 1
+   timeout_seconds: 600
+   location: US
+   priority: interactive
+   retries: 3

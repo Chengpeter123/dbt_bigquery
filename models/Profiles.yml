@@ -1,12 +1,9 @@
-default:
- target: dev
- outputs:
-  dev:
-   type: bigquery
-   project: skilful-gantry-404609
-   dataset: Staging
-   threads: 1
-   timeout_seconds: 600
-   location: US
-   priority: interactive
-   retries: 3
+
+version: 2
+
+sources:
+  - name: Infofiscus
+    database: skilful-gantry-404609
+    schema: Landing   
+    tables: 
+      - name: ACCOUNTS

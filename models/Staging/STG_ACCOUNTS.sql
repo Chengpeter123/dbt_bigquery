@@ -2,7 +2,6 @@
         config(
         materialized="table",
         enabled=true
-       
     
         ) 
 }}

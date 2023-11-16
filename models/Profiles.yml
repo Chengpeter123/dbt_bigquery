@@ -1,0 +1,9 @@
+
+version: 2
+
+sources:
+  - name: Infofiscus
+    database: skilful-gantry-404609
+    schema: Landing   
+    tables: 
+      - name: ACCOUNTS

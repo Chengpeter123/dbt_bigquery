@@ -40,4 +40,7 @@ models:
     # Applies to all files under models/example/
     Staging:
       +materialized: table
-      #+schema: Staging
+      +schema: Staging
+    Data_Mart:
+      # +materialized: table
+      +schema: Data_Mart

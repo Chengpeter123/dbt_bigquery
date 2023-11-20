@@ -1,7 +1,8 @@
 {{ 
         config(
         materialized="table",
-        enabled=true
+        enabled=true,
+        schema = 'Staging'
     
         ) 
 }}

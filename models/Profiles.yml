@@ -7,3 +7,11 @@ sources:
     schema: Landing   
     tables: 
       - name: ACCOUNTS
+ 
+  - name: source_name 
+    database: |
+      {%- if  target.name == "DBT_PROD" -%} 	prod-406711
+      {%- elif target.name == "Development"  -%} skilful-gantry-404609
+      {%- else -%} invalid_database
+      {%- endif -%}
+    schema: source_schema

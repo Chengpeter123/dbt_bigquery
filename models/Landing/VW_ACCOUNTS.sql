@@ -1,7 +1,9 @@
 {{
    config(
         materialized = 'view',
-        schema = 'Landing'
+        schema = 'Landing',
+        post_hook="Update skilful-gantry-404609.Landing.INFOFISCUS_CT CT SET LAST_RUN_DATE = CURRENT_TIMESTAMP() WHERE
+        SRC_OBJECT =  'ACCOUNTS' AND TGT_OBJECT = 'STG_ACCOUNTS' ;"
         
     )
 }} 

@@ -1,0 +1,1 @@
+SELECT * FROM `skilful-gantry-404609.Landing.ACCOUNTS`

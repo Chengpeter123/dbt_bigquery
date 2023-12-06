@@ -2,7 +2,7 @@
    config(
         materialized = 'view',
         schema = 'Landing',
-        post_hook="Update skilful-gantry-404609.Landing.INFOFISCUS_CT CT SET LAST_RUN_DATE = CURRENT_TIMESTAMP() WHERE
+        post_hook="Update {{ env_var('DBT_GCP_PROJECT') }}.Landing.INFOFISCUS_CT CT SET LAST_RUN_DATE = CURRENT_TIMESTAMP() WHERE
         SRC_OBJECT =  'ACCOUNTS' AND TGT_OBJECT = 'STG_ACCOUNTS' ;"
         
     )
@@ -23,7 +23,7 @@ ID,ISDELETED,MASTERRECORDID,NAME,TYPE,NULL AS RECORDTYPEID,PARENTID, null as BIL
   CURRENT_TIMESTAMP AS INSERT_DT
 ,ID AS KEY_ID
 FROM {{source('Infofiscus','ACCOUNTS')}}
-INNER JOIN skilful-gantry-404609.Landing.INFOFISCUS_CT
+INNER JOIN {{ env_var("DBT_GCP_PROJECT") }}.Landing.INFOFISCUS_CT
 ON SRC_OBJECT ='ACCOUNTS' AND TGT_OBJECT = 'STG_ACCOUNTS' 
  WHERE LASTMODIFIEDDATE >= LAST_RUN_DATE
 

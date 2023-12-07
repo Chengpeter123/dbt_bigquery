@@ -1,9 +1,7 @@
 {{
    config(
         materialized = 'view',
-        schema = 'Landing',
-        post_hook="Update {{ env_var('DBT_GCP_PROJECT') }}.Landing.INFOFISCUS_CT CT SET LAST_RUN_DATE = CURRENT_TIMESTAMP() WHERE
-        SRC_OBJECT =  'ACCOUNTS' AND TGT_OBJECT = 'STG_ACCOUNTS' ;"
+        schema = 'Landing'
         
     )
 }} 

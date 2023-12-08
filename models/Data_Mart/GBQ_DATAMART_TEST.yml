@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: DIM_CAMPAIGNS
+    columns: 
+      - name: CAMPAIGN_KEY
+        tests:
+         - not_null
+         - unique
+      - name: NAME
+        tests:
+          - accepted_values:
+              values:
+                -SLA Platinum conference
+                -International Electrical Engineers Association Trade Show - Mar 4-5, 2002
+                -User Conference - Jun 17-19, 2002
+                -GC Product Webinar - Jan 7, 2002
+                -DM Campaign to Top Customers - Nov 12-23, 2001
+                -Kavya
+                
+

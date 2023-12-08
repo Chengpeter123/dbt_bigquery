@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: STG_ACCOUNTS
+    columns: 
+      - name: ID
+        tests:
+          - relationships:
+              to: ref('STG_CAMPAIGNS')
+              field: ID

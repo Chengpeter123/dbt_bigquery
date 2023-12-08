@@ -7,6 +7,7 @@ sources:
     schema: Landing   
     tables: 
       - name: ACCOUNTS
+      - name: CAMPAIGNS
  
   - name: source_name 
     database: |
